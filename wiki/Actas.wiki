@@ -8,6 +8,7 @@ Enlaces a las actas de google docs.
 = Details =
 
 Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+  * https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY/edit
+
+* https://docs.google.com/document/d/1O6gpebIUkF569oVohY-p4hQFlSWkwR_44zIUOip8bXQ/edit
