@@ -10,7 +10,7 @@ Enlaces a las actas de google docs.
 Add your content here.  Format your content with:
 
   * Acta 1
-https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY
+* https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY
 
 Acta 2
 * https://docs.google.com/document/d/1O6gpebIUkF569oVohY-p4hQFlSWkwR_44zIUOip8bXQ
