@@ -8,10 +8,6 @@
 <a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>
 
 
-** 3. Fase de Construcción
+** 3. Fase de Construcción  //Sin determinar
 
-//Sin determinar
-
-** 4. Fase de Transición
-
-//Sin determinar
+** 4. Fase de Transición  //Sin determinar
