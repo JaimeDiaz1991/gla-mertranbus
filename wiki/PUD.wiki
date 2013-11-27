@@ -1,9 +1,12 @@
 
 
-
          FASES
 
+
 1. Fase de Inicio
+
 2. Fase de Elaboración
+
 3. Fase de Construcción
+
 4. Fase de Transición
