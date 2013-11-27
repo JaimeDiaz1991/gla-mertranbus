@@ -9,15 +9,13 @@ Enlaces a las actas de google docs.
 
 Add your content here.  Format your content with:
 
-  * Acta 1
-<a href="https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY" rel="nofollow">Acta 1</a>
-* https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY
+* <a href="https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY" rel="nofollow">Acta 1</a>
 
-Acta 2
-* https://docs.google.com/document/d/1O6gpebIUkF569oVohY-p4hQFlSWkwR_44zIUOip8bXQ
 
-Acta 3
-https://docs.google.com/document/d/1VNaOWumYk65sQb7FwkzfGmJjws-tOiCbThiuCJiQOs0
+* <a href="https://docs.google.com/document/d/1O6gpebIUkF569oVohY-p4hQFlSWkwR_44zIUOip8bXQ" rel="nofollow">Acta 2</a>
 
-Acta 4
-https://docs.google.com/document/d/1tXV89llgLqdqBnSaxgV7HHKv5JZe08QesGa7qX5aeqE
+
+* <a href="https://docs.google.com/document/d/1VNaOWumYk65sQb7FwkzfGmJjws-tOiCbThiuCJiQOs0" rel="nofollow">Acta 3</a>
+
+
+* <a href="https://docs.google.com/document/d/1tXV89llgLqdqBnSaxgV7HHKv5JZe08QesGa7qX5aeqE" rel="nofollow">Acta 4</a>
