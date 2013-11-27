@@ -4,23 +4,14 @@
 **
 <a href="https://code.google.com/p/gla-mertranbus/wiki/Inicio" rel="nofollow">1. Fase de Inicio</a>
 
-*********PDF DESCRIPCION DEL SISTEMA 
 
-*********PDF ESPECIFICACIÓN DE REQUISITOS 
+<a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>
 
-*********PDF PLANIFICACIÓN DEL DESARROLLO DEL PRODUCTO
 
-*********PDF PRESUPUESTO DE DESARROLLO
-
-2. Fase de Elaboración
-
-PDF
-PDF
-
-3. Fase de Construcción
+** 3. Fase de Construcción
 
 //Sin determinar
 
-4. Fase de Transición
+** 4. Fase de Transición
 
 //Sin determinar
