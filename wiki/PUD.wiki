@@ -1,11 +1,15 @@
-
          FASES
 
 
 1. Fase de Inicio
-PDF 
-PDF
-PDF
+
+*********PDF DESCRIPCION DEL SISTEMA 
+
+*********PDF ESPECIFICACIÓN DE REQUISITOS 
+
+*********PDF PLANIFICACIÓN DEL DESARROLLO DEL PRODUCTO
+
+*********PDF PRESUPUESTO DE DESARROLLO
 
 2. Fase de Elaboración
 
