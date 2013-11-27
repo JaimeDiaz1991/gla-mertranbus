@@ -1,10 +1,9 @@
-
 = Introducción =
 
 Enlaces a las actas de reuniones almacenadas en Google Docs.
 
 
-= Informe de Actas =
+== Informe de Actas ==
 
 
 * <a href="https://docs.google.com/document/d/19_7wZb0nSJQRqVqn8lv4YhbGGUB7aGcdeRCeo6sZmQY" rel="nofollow">Acta 1</a>
