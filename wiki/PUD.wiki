@@ -17,6 +17,6 @@ Presupuesto
 Diagramas de casos de uso
 
 
-** 3. Fase de Construcción  //Sin determinar
+** <font color="red">3. Fase de Construcción  //Sin determinar</font>3. Fase de Construcción  //Sin determinar
 
-** 4. Fase de Transición  //Sin determinar
+** <font color="red">4. Fase de Transición  //Sin determinar</font>3.
