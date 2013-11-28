@@ -5,7 +5,16 @@
 <a href="https://code.google.com/p/gla-mertranbus/wiki/Inicio" rel="nofollow">1. Fase de Inicio</a>
 
 
+
+
 <a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>
+
+
+Planificacion
+
+Presupuesto
+
+Diagramas de casos de uso
 
 
 ** 3. Fase de Construcción  //Sin determinar
