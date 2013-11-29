@@ -18,7 +18,7 @@
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8cDBxWnFqQncxeG8/edit?usp=drive_web" rel="nofollow">Tabla de Planificación y Presupuesto</a>
 
-* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8TURadG40d2s4eDg/edit?usp=drive_web" rel="nofollow">Diagramas de Casos de uso</a>
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8Mi1rak9BMVdKcXc/edit?usp=drive_web" rel="nofollow">Diagramas de Casos de uso</a>
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8SnpCVXJTLWJPOFU/edit?usp=drive_web" rel="nofollow">Diagrama de Clases de Análisis</a>
 
