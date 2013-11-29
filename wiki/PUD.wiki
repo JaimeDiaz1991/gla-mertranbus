@@ -2,7 +2,7 @@
 
 
 **
-===<a href="https://code.google.com/p/gla-mertranbus/wiki/Inicio" rel="nofollow">1. Fase de Inicio</a>===
+===1. Fase de Inicio===
 
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eFh2dVBOaXBMSHM/edit?usp=drive_web" rel="nofollow">Descripción del Sistema</a>
@@ -11,7 +11,7 @@
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8X2Y1YjhTV0dUVVE/edit?usp=drive_web" rel="nofollow">Especificación de Requisitos</a>
 
 
-===<a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>===
+===2. Fase de Elaboración===
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eEZDbk1CQnhGbjA/edit?usp=drive_web" rel="nofollow">Planificación</a>
 
