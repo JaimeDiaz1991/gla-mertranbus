@@ -13,7 +13,7 @@ PDF PLANIFICACIÓN DEL DESARROLLO DEL PRODUCTO
 PDF PRESUPUESTO DE DESARROLLO
 
 
-<a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>
+===<a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>===
 
 
 Planificacion
@@ -23,7 +23,7 @@ Presupuesto
 Diagramas de casos de uso
 
 
-** <font color="red">3. Fase de Construcción  //Sin determinar</font>
+===** <font color="red">3. Fase de Construcción  //Sin determinar</font>===
 
 
-** <font color="red">4. Fase de Transición  //Sin determinar</font>
+===** <font color="red">4. Fase de Transición  //Sin determinar</font>===
