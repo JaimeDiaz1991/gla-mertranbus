@@ -4,23 +4,21 @@
 **
 ===<a href="https://code.google.com/p/gla-mertranbus/wiki/Inicio" rel="nofollow">1. Fase de Inicio</a>===
 
-PDF DESCRIPCION DEL SISTEMA
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eFh2dVBOaXBMSHM/edit?usp=drive_web" rel="nofollow">Descripción del Sistema</a>
 
 PDF ESPECIFICACIÓN DE REQUISITOS
-
-PDF PLANIFICACIÓN DEL DESARROLLO DEL PRODUCTO
-
-PDF PRESUPUESTO DE DESARROLLO
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8X2Y1YjhTV0dUVVE/edit?usp=drive_web" rel="nofollow">Especificación de Requisitos</a>
 
 
 ===<a href="https://code.google.com/p/gla-mertranbus/wiki/Elaboracion" rel="nofollow">2. Fase de Elaboración</a>===
 
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eEZDbk1CQnhGbjA/edit?usp=drive_web" rel="nofollow">Planificación</a>
 
-Planificacion
 
-Presupuesto
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8cDBxWnFqQncxeG8/edit?usp=drive_web" rel="nofollow">Tabla de Planificación</a>
 
-Diagramas de casos de uso
+* <a href="" rel="nofollow">Diagramas de Casos de uso</a>
 
 
 ===** <font color="red">3. Fase de Construcción  //Sin determinar</font>===
