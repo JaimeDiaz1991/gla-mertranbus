@@ -7,7 +7,7 @@
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eFh2dVBOaXBMSHM/edit?usp=drive_web" rel="nofollow">Descripción del Sistema</a>
 
-PDF ESPECIFICACIÓN DE REQUISITOS
+
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8X2Y1YjhTV0dUVVE/edit?usp=drive_web" rel="nofollow">Especificación de Requisitos</a>
 
 
