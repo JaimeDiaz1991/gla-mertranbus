@@ -1,8 +1,0 @@
-#labels FaseElaboracion,PUD
-== PDFS ==
-
-** Planificacion
-
-** Presupuesto
-
-** Diagramas de casos de uso
