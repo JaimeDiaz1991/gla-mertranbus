@@ -26,10 +26,19 @@
 ===** 3. Fase de Construcción  //Sin determinar===
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8bG9oOWFpTUlSWlk/edit?usp=drive_web" rel="nofollow">Caso de Uso Autenticar</a>
+
+
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8emJjU2FfU0Q5WG8/edit?usp=drive_web" rel="nofollow">Caso de Uso Gestion Pedidos</a>
+
+
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8TlI0RnFTaGNhbTQ/edit?usp=drive_web" rel="nofollow">Caso de Uso Gestion Rutas</a>
+
+
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8TjU0YkJ6eTNmeTA/edit?usp=drive_web" rel="nofollow">Caso de Uso Sistema de Información</a>
+
+
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8Z2NocGhZMWxQWkU/edit?usp=drive_web" rel="nofollow">Caso de Uso Visualizar Pedido</a>
+
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8UlN1NnpIY19qTmc/edit?usp=drive_web" rel="nofollow">Caso de Uso Visualizar Rutas</a>
 
