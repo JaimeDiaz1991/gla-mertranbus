@@ -20,6 +20,8 @@
 
 * <a href="https://code.google.com/p/gla-mertranbus/source/browse/Diagramas+de+caso+de+Uso.vpp" rel="nofollow">Diagramas de Casos de uso</a>
 
+* <a href="https://code.google.com/p/gla-mertranbus/source/browse/Diagramas+de+Clases_Analisis_Dise%C3%B1o.vpp" rel="nofollow">Diagrama de Clases de Análisis</a>
+
 
 ===** <font color="red">3. Fase de Construcción  //Sin determinar</font>===
 
