@@ -23,7 +23,7 @@
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8SnpCVXJTLWJPOFU/edit?usp=drive_web" rel="nofollow">Diagrama de Clases de Análisis</a>
 
 
-===** 3. Fase de Construcción  //Sin determinar===
+===** 3. Fase de Construcción  ===
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8bG9oOWFpTUlSWlk/edit?usp=drive_web" rel="nofollow">Caso de Uso Autenticar</a>
 
