@@ -6,6 +6,8 @@ public class Ruta {
 	String origen;
 	String destino;
 	String descripcion;
+	
+	
 	public Ruta(int id,double km, String origen, String destino, String descripcion) {
 		//this.id=id;
 		this.km = km;
@@ -13,6 +15,7 @@ public class Ruta {
 		this.destino = destino;
 		this.descripcion = descripcion;
 	}
+	
 	public double getKm() {
 		return km;
 	}

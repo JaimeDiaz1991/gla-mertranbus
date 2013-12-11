@@ -7,7 +7,12 @@ import Dominio.Ruta;
 
 public class Agente {
 	
-	void crear_ruta(double kilometros,String origen,String destino,String descripcion)throws SQLException{
+	public static void crear_ruta(Ruta r)throws SQLException{
+		double kilometros=r.getKm();
+		String origen=r.getOrigen();
+		String destino=r.getDestino();
+		String descripcion=r.getDescripcion();
+		
 		String SQL_select="SELECT Max(Id) FROM Ruta;";
         ResultSet resultado=agenteBd.select(SQL_select);
 		int ID_max = 0;
