@@ -27,5 +27,15 @@ public class Agente {
         agenteBd.create(SQL_insert);
 		
 	}
+	public static int verificar_login(String usuario,String pass){
+		
+		if(usuario.equals("Jaime") && pass.equals("Jaime") )
+			return 0;
+		else if(usuario.equals("Isi") && pass.equals("Isi"))
+			return 1;
+		else
+			return -1;
+				
+	}
 
 }
