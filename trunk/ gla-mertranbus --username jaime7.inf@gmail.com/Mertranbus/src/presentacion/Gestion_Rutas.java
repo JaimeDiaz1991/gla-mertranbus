@@ -9,6 +9,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextArea;
@@ -17,6 +18,13 @@ import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.sql.SQLException;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
 
 public class Gestion_Rutas {
 
@@ -56,6 +64,9 @@ public class Gestion_Rutas {
 	private final JTextArea textArea_1 = new JTextArea();
 	String[] datos1 = {"Origen", "Destino"};
 	private final JList list_1 = new JList();
+	private final JLabel label_6 = new JLabel("*");
+	private final JLabel label_7 = new JLabel("*");
+	private final JLabel label_8 = new JLabel("*");
 
 	/**
 	 * Launch the application.
@@ -87,9 +98,13 @@ public class Gestion_Rutas {
 		textArea_1.setBorder(new TitledBorder(null, "Descripci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textField_3.setColumns(10);
 		textField_2.setColumns(10);
+		textFieldBuscar.setEnabled(false);
 		textFieldBuscar.setColumns(10);
+		textArea.setEnabled(false);
 		textArea.setBorder(new TitledBorder(null, "Descripci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textField_1.setEnabled(false);
 		textField_1.setColumns(10);
+		textField.setEnabled(false);
 		textField.setColumns(10);
 		textAreaDescripcion.setBorder(new TitledBorder(null, "Descripci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textFieldDestino.setColumns(10);
@@ -115,17 +130,25 @@ public class Gestion_Rutas {
 								.addComponent(lblOrigen)
 								.addComponent(lblKms))
 							.addGap(18)
-							.addGroup(gl_NuevaRuta.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_NuevaRuta.createParallelGroup(Alignment.LEADING, false)
 								.addGroup(gl_NuevaRuta.createSequentialGroup()
 									.addComponent(textFieldOrigen, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-									.addGap(59)
-									.addComponent(lblDestino))
-								.addComponent(formattedTextFieldKMS, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(label_6))
+								.addGroup(gl_NuevaRuta.createSequentialGroup()
+									.addComponent(formattedTextFieldKMS, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(label_8)))
+							.addGap(18)
+							.addComponent(lblDestino)
 							.addGap(18)
 							.addGroup(gl_NuevaRuta.createParallelGroup(Alignment.TRAILING)
 								.addComponent(btnGuardar_1, Alignment.LEADING)
-								.addComponent(textFieldDestino, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(textAreaDescripcion, GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
+								.addGroup(Alignment.LEADING, gl_NuevaRuta.createSequentialGroup()
+									.addComponent(textFieldDestino, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(label_7))))
+						.addComponent(textAreaDescripcion, GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		gl_NuevaRuta.setVerticalGroup(
@@ -136,16 +159,20 @@ public class Gestion_Rutas {
 						.addComponent(lblOrigen)
 						.addComponent(textFieldOrigen, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblDestino)
-						.addComponent(textFieldDestino, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textFieldDestino, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label_6)
+						.addComponent(label_7))
 					.addGap(43)
 					.addGroup(gl_NuevaRuta.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblKms)
 						.addComponent(formattedTextFieldKMS, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnGuardar_1))
-					.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+						.addComponent(btnGuardar_1)
+						.addComponent(label_8))
+					.addPreferredGap(ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
 					.addComponent(textAreaDescripcion, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
+		btnGuardar_1.addActionListener(new BtnGuardar_1ActionListener());
 		NuevaRuta.setLayout(gl_NuevaRuta);
 		
 		tabbedPane.addTab("Modificar Ruta", null, ModificarRuta, null);
@@ -181,6 +208,10 @@ public class Gestion_Rutas {
 							.addGap(16)))
 					.addContainerGap())
 		);
+		list.addListSelectionListener(new ListListSelectionListener());
+		formattedTextField.setEnabled(false);
+		btnGuardar.setEnabled(false);
+		btnBuscar.setEnabled(false);
 		gl_ModificarRuta.setVerticalGroup(
 			gl_ModificarRuta.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_ModificarRuta.createSequentialGroup()
@@ -272,5 +303,35 @@ public class Gestion_Rutas {
 		EliminarRuta.setLayout(gl_EliminarRuta);
 		
 		
+	}
+	private class BtnGuardar_1ActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+			if(textFieldOrigen.getText().equals("") || textFieldDestino.getText().equals("") || formattedTextFieldKMS.getText().equals("")){
+			    JOptionPane.showMessageDialog(frame,"Debes de rellenar los campos con *", "Error, Falta argumentos", JOptionPane.ERROR_MESSAGE);
+			}
+			else{
+				Dominio.Gestor_Rutas gestor_r = new Dominio.Gestor_Rutas();
+				try {
+					gestor_r.crear_ruta(textFieldOrigen.getText(), textFieldDestino.getText(),Double.parseDouble(formattedTextFieldKMS.getText()), textAreaDescripcion.getText());
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    JOptionPane.showMessageDialog(frame,"ERROR EN LA INSERCION EN LA BASE DE DATOS", "Error, BBDD", JOptionPane.ERROR_MESSAGE);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    JOptionPane.showMessageDialog(frame,"ERROR EN LA INSERCION EN LA BASE DE DATOS", "Error, BBDD", JOptionPane.ERROR_MESSAGE);
+
+				}
+			    JOptionPane.showMessageDialog(frame,"RUTA AÑADIDA A LA BASE DE DATOS CORRECTAMENTE", "Ruta insertada", JOptionPane.INFORMATION_MESSAGE);
+
+			}
+		}
+	}
+	private class ListListSelectionListener implements ListSelectionListener {
+		public void valueChanged(ListSelectionEvent arg0) {
+			textFieldBuscar.setEnabled(true);
+			btnBuscar.setEnabled(true);
+		}
 	}
 }

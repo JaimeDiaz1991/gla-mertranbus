@@ -20,12 +20,15 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.HeadlessException;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.border.LineBorder;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-
+import java.sql.SQLException;
+import java.sql.*;
 public class Principal {
 
 	private JFrame frame;
@@ -106,7 +109,7 @@ public class Principal {
 		
 		panel_2.add(labelLogo);
 	}
-	private class BtnEntrarActionListener implements ActionListener {
+	private class BtnEntrarActionListener implements ActionListener  {
 		public void actionPerformed(ActionEvent arg0) {
 			if ((textFieldUsuario.getText().equals("")||(new String(passwordField.getPassword())).equals(""))) {
 	            
@@ -123,17 +126,25 @@ public class Principal {
 			else
 				passwordField.setBorder(new LineBorder(Color.BLACK));
 			}
-			else{
-				
-				if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==-1){
-		            JOptionPane.showMessageDialog(frame,"NO ENCONTRADO", "Error", JOptionPane.ERROR_MESSAGE);
-				}
-				if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==0){
-		            JOptionPane.showMessageDialog(frame,"Cargamos Menu de Adminstrador", "Error", JOptionPane.ERROR_MESSAGE);
-				}
-				if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==1){
-		            JOptionPane.showMessageDialog(frame,"Cargamos Menu de Conductor", "Error", JOptionPane.ERROR_MESSAGE);
-				}
+			else{						 	
+						try {
+							if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==0){
+							    JOptionPane.showMessageDialog(frame,"Cargamos Menu de Adminstrador", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+							}
+							else if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==1)
+							    JOptionPane.showMessageDialog(frame,"Cargamos Menu de Conductor", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+							else if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==-1)
+							    JOptionPane.showMessageDialog(frame,"NO ENCONTRADO", "Error", JOptionPane.ERROR_MESSAGE);
+							
+						} catch (HeadlessException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							/*LO COMENTO PORQUE SALTA ERROR Y NO SE COMO SOLUCIONARLO, ASI NO SALTA*/
+							e.printStackTrace();
+						}
+					
 			}
 			
 			

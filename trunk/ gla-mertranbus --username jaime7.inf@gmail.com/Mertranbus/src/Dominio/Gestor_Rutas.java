@@ -11,8 +11,8 @@ public class Gestor_Rutas {
 		
 	}
 
-	public void crear_ruta(int id,double km, String origen, String destino, String descripcion) throws SQLException{
-		Ruta ruta1 =new Ruta(id, km, origen, destino,descripcion);
+	public void crear_ruta(String origen, String destino,double kms, String descripcion) throws SQLException{
+		Ruta ruta1 =new Ruta(origen, destino,kms,descripcion);
 		Persistencia.Agente.crear_ruta(ruta1);
 	}
 

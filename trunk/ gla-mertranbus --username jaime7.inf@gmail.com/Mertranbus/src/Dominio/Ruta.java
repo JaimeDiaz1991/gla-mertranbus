@@ -1,21 +1,36 @@
 package Dominio;
 
 public class Ruta {
-	int id;
-	double km;
+	
+	int ID;
 	String origen;
 	String destino;
+	double km;
 	String descripcion;
 	
 	
-	public Ruta(int id,double km, String origen, String destino, String descripcion) {
-		//this.id=id;
+	public Ruta(int ID,String origen, String destino,double km, String descripcion) {
+		this.ID=ID;
+		this.km = km;
+		this.origen = origen;
+		this.destino = destino;
+		this.descripcion = descripcion;
+	}
+	public Ruta(String origen, String destino,double km, String descripcion) {
 		this.km = km;
 		this.origen = origen;
 		this.destino = destino;
 		this.descripcion = descripcion;
 	}
 	
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
 	public double getKm() {
 		return km;
 	}
@@ -40,16 +55,10 @@ public class Ruta {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String toString() {
-		return "Origen; " + origen + " Destinoestino " 
-				+ destino + " Descripcion " + descripcion 
-				+ " kilometros " + km + ".";
+		return "Origen: " + origen + " Destino: " 
+				+ destino + " Descripcion: " + descripcion 
+				+ " kilometros: " + km + ".";
 	}
 	
 }

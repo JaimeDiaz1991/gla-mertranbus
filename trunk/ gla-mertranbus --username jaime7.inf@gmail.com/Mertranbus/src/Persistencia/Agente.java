@@ -8,34 +8,48 @@ import Dominio.Ruta;
 public class Agente {
 	
 	public static void crear_ruta(Ruta r)throws SQLException{
+		agenteBd agente1 = new agenteBd();
+		agente1.conectar();
 		double kilometros=r.getKm();
 		String origen=r.getOrigen();
 		String destino=r.getDestino();
 		String descripcion=r.getDescripcion();
-		
-		String SQL_select="SELECT Max(Id) FROM Ruta;";
-        ResultSet resultado=agenteBd.select(SQL_select);
-		int ID_max = 0;
-        while(resultado.next()){
-        	ID_max = (resultado.getInt(1));
-        }
-        //YA TENEMOS LA MAXIMA ID
-        int ID = ID_max+1;
-        Ruta r1 = new Ruta(ID,kilometros,origen,destino,descripcion);
-        String SQL_insert="INSERT INTO Ruta (km, Origen, Destino,Descripcion) VALUES (" + kilometros + ",'" 
-        		+ origen + "' ," + "'" + destino + "','" + descripcion + "');";
-        agenteBd.create(SQL_insert);
-		
+		System.out.println(r.toString());
+
+        String SQL_insert="INSERT INTO Ruta (ORIGEN, DESTINO,KMS,DESCRIPCION) VALUES ("+"'" + origen + "','" 
+        		+ destino + "'," + kilometros + ",'" + descripcion + "');";
+        System.out.println(SQL_insert);
+        agente1.create(SQL_insert);
+		agente1.desconectar();
+
 	}
-	public static int verificar_login(String usuario,String pass){
+	public int verificar_login(String usuario,String pass) throws SQLException{
+		Persistencia.agenteBd agente1 = new Persistencia.agenteBd();
+		agente1.conectar();
+		String SQL_select="SELECT DISTINCT Usuario.NOMBRE,Usuario.PASS,Usuario.Tipo FROM USUARIO;";
+		ResultSet resul2=agente1.select(SQL_select);
+
 		
-		if(usuario.equals("Jaime") && pass.equals("Jaime") )
-			return 0;
-		else if(usuario.equals("Isi") && pass.equals("Isi"))
-			return 1;
-		else
-			return -1;
-				
+        while(resul2.next()){
+
+        	if(usuario.equals(resul2.getString(1)) && pass.equals(resul2.getString(2))){
+        		System.out.println("Acceso Concedido");
+
+        		if("Administrador".equals(resul2.getString(3))){
+        			agente1.desconectar();
+        			return 0;
+        		}
+        		else if("Conductor".equals(resul2.getString(3))){
+        			agente1.desconectar();
+        			return 1;
+        		}
+        	}	  	
+        }
+        agente1.desconectar();
+        return -1;
+	}
+	public void cambiar_pass()throws SQLException{
+		
 	}
 
 }
