@@ -31,7 +31,7 @@ import java.sql.SQLException;
 import java.sql.*;
 public class Principal {
 
-	private JFrame frame;
+	JFrame frame;
 	private final JPanel panel = new JPanel();
 	private final JPanel panel_1 = new JPanel();
 	private final JLabel lblUsuario = new JLabel("Usuario:");
@@ -42,6 +42,7 @@ public class Principal {
 	private final JButton btnSalir = new JButton("Salir");
 	private final JPanel panel_2 = new JPanel();
 	private final JLabel labelLogo = new JLabel("");
+	private final JTextField textFieldUsu_reg = new JTextField();
 
 	/**
 	 * Launch the application.
@@ -70,6 +71,10 @@ public class Principal {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		textFieldUsu_reg.setVisible(false);
+		textFieldUsu_reg.setEnabled(false);
+		textFieldUsu_reg.setBounds(284, 11, 86, 20);
+		textFieldUsu_reg.setColumns(10);
 		textFieldUsuario.addFocusListener(new TextFieldUsuarioFocusListener());
 		textFieldUsuario.addActionListener(new BtnEntrarActionListener());
 		textFieldUsuario.setBounds(207, 96, 86, 20);
@@ -105,6 +110,8 @@ public class Principal {
 		
 		panel_1.add(btnSalir);
 		
+		panel_1.add(textFieldUsu_reg);
+		
 		panel.add(panel_2, BorderLayout.NORTH);
 		
 		panel_2.add(labelLogo);
@@ -128,13 +135,28 @@ public class Principal {
 			}
 			else{						 	
 						try {
-							if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==0){
+							Dominio.Empleado usu_reg = Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()));
+							
+							if(usu_reg.getClass().getName().equals("Dominio.Administrador")){
+								textFieldUsu_reg.setText(Integer.toString(usu_reg.getID()));
 							    JOptionPane.showMessageDialog(frame,"Cargamos Menu de Adminstrador", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
-							}
-							else if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==1)
-							    JOptionPane.showMessageDialog(frame,"Cargamos Menu de Conductor", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
-							else if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword()))==-1)
-							    JOptionPane.showMessageDialog(frame,"NO ENCONTRADO", "Error", JOptionPane.ERROR_MESSAGE);
+							    frame.setVisible(false);
+							    IAdministrador ventana2 = new IAdministrador(); 
+							    ventana2.setVisible(true);
+							    ventana2.textFieldID_usu.setText(textFieldUsu_reg.getText());
+							    ventana2.textField_5.setText(textFieldUsuario.getText());
+							    ventana2.passwordField.setText(new String(passwordField.getPassword()));
+							    }
+							else if(usu_reg.getClass().getName().equals("Dominio.Conductor")){
+								textFieldUsu_reg.setText(Integer.toString(usu_reg.getID()));
+								JOptionPane.showMessageDialog(frame,"Cargamos Menu de Conductor", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+								frame.setVisible(false);
+							    IConductor ventana2 = new IConductor(); 
+							    ventana2.setVisible(true);
+							    ventana2.textFieldID_usu.setText(textFieldUsu_reg.getText());
+							    ventana2.textField_5.setText(textFieldUsuario.getText());
+							    ventana2.passwordField.setText(new String(passwordField.getPassword()));
+							    }
 							
 						} catch (HeadlessException e) {
 							// TODO Auto-generated catch block
@@ -143,6 +165,13 @@ public class Principal {
 							// TODO Auto-generated catch block
 							/*LO COMENTO PORQUE SALTA ERROR Y NO SE COMO SOLUCIONARLO, ASI NO SALTA*/
 							e.printStackTrace();
+						}
+						catch (NullPointerException e){
+							//NO ENCONTRADO
+							//System.out.println(usu_reg.getClass().getName());	   
+							//if(Dominio.Autenticar.login(textFieldUsuario.getText(),new String(passwordField.getPassword())).equals(null))
+							  //  JOptionPane.showMessageDialog(frame,"NO ENCONTRADO", "Error", JOptionPane.ERROR_MESSAGE);
+						    JOptionPane.showMessageDialog(frame,"NO ENCONTRADO", "Error", JOptionPane.ERROR_MESSAGE);
 						}
 					
 			}

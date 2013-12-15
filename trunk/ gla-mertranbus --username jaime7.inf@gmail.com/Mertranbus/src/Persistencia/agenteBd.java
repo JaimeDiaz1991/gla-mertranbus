@@ -55,7 +55,7 @@ public class agenteBd {
 	}
 	
 	
-	public static void delete(String SQL) throws SQLException{
+	public void delete(String SQL) throws SQLException{
 		//return stat.executeUpdate("delete from Ruta where ID="+opcion);
                 Statement stat = con.createStatement();
                 stat.executeUpdate(SQL);
@@ -66,6 +66,13 @@ public class agenteBd {
                //return stat.executeQuery("SELECT Max(Id) FROM Ruta;");
                 Statement stat = con.createStatement();
                 return stat.executeQuery(SQL);
+	}
+	public void update(String SQL) throws SQLException{
+		//return stat.executeQuery("SELECT * FROM Ruta;");
+               //return stat.executeQuery("SELECT Max(Id) FROM Ruta;");
+                Statement stat = con.createStatement();
+                stat.executeUpdate(SQL);
+
 	}
 	
 }

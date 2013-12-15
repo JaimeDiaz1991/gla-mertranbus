@@ -1,10 +1,19 @@
 package presentacion;
 
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.EventQueue;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+
+import javax.swing.JDialog;
 import javax.swing.JTabbedPane;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -29,12 +38,16 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.JComboBox;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JPasswordField;
+import java.awt.Font;
 
-public class Gestion_Rutas{
 
-	/**
-	 * 
-	 */
+
+public class IAdministrador extends JFrame {
+
+	private JPanel contentPane;
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
 	private final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -70,13 +83,23 @@ public class Gestion_Rutas{
 	private final JButton buttonEliminar = new JButton("Eliminar");
 	private final JTextArea textArea_1 = new JTextArea();
 	String[] datos1 = {"Origen", "Destino"};
-	private final JList list_1 = new JList();
 	private final JLabel label_6 = new JLabel("*");
 	private final JLabel label_7 = new JLabel("*");
 	private final JLabel label_8 = new JLabel("*");
 	private final JLabel lblRuta = new JLabel("Ruta:");
 	private final JComboBox comboBox = new JComboBox();
-
+	private final JComboBox comboBox_1 = new JComboBox();
+	private final JLabel label_9 = new JLabel("Ruta:");
+	private final JTextField textField_4 = new JTextField();
+	private final JButton button_buscarEliminar = new JButton("buscar");
+	private final JList list_1 = new JList(datos);
+	private final JPanel Panel_Control = new JPanel();
+	private final JLabel lblUsuario = new JLabel("Usuario:");
+	final JTextField textField_5 = new JTextField();
+	private final JLabel lblContrasea = new JLabel("Contraseña:");
+	final JPasswordField passwordField = new JPasswordField();
+	private final JButton btnCambiar = new JButton("Cambiar");
+	final JTextField textFieldID_usu = new JTextField();
 	/**
 	 * Launch the application.
 	 */
@@ -84,8 +107,8 @@ public class Gestion_Rutas{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Gestion_Rutas window = new Gestion_Rutas();
-					window.frame.setVisible(true);
+					IAdministrador frame = new IAdministrador();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -94,19 +117,25 @@ public class Gestion_Rutas{
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
-	public Gestion_Rutas() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		textArea_1.setBorder(new TitledBorder(null, "Descripci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textField_3.setColumns(10);
-		textField_2.setColumns(10);
+	public IAdministrador() {
+		textFieldID_usu.setVisible(false);
+		textFieldID_usu.setEnabled(false);
+		textFieldID_usu.setBounds(365, 11, 86, 20);
+		textFieldID_usu.setColumns(10);
+		textField_5.setEditable(false);
+		textField_5.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textField_5.setBounds(260, 116, 86, 20);
+		textField_5.setColumns(10);
+		addWindowListener(new ThisWindowListener());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 625, 450);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		textFieldBuscar.addActionListener(new BtnBuscarActionListener());
 		textFieldBuscar.setEnabled(false);
 		textFieldBuscar.setColumns(10);
 		textArea.setEnabled(false);
@@ -118,11 +147,8 @@ public class Gestion_Rutas{
 		textAreaDescripcion.setBorder(new TitledBorder(null, "Descripci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textFieldDestino.setColumns(10);
 		textFieldOrigen.setColumns(10);
-		frame = new JFrame();
-		frame.setBounds(100, 100, 625, 450);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		panel.add(tabbedPane);
@@ -252,78 +278,113 @@ public class Gestion_Rutas{
 					.addContainerGap())
 		);
 		btnBuscar.addActionListener(new BtnBuscarActionListener());
+		button_buscarEliminar.addActionListener(new button_buscarEliminarActionListener());
 		list.addListSelectionListener(new ListListSelectionListener());
 		formattedTextField.setEnabled(false);
 		btnGuardar.setEnabled(false);
 		btnBuscar.setEnabled(false);
 		list.setBorder(new TitledBorder(null, "Selecciona:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		ModificarRuta.setLayout(gl_ModificarRuta);
+		textArea_1.setEditable(false);
+		textArea_1.setFont(new Font("Monospaced", Font.BOLD, 13));
+		textArea_1.setBounds(10, 265, 532, 89);
+		textArea_1.setBorder(new TitledBorder(null, "Descripci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textField_3.setEditable(false);
+		textField_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textField_3.setBounds(355, 153, 150, 20);
+		textField_3.setColumns(10);
+		textField_2.setEditable(false);
+		textField_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textField_2.setBounds(51, 153, 184, 20);
+		textField_2.setColumns(10);
 		
 		tabbedPane.addTab("Eliminar Ruta", null, EliminarRuta, null);
-		GroupLayout gl_EliminarRuta = new GroupLayout(EliminarRuta);
-		gl_EliminarRuta.setHorizontalGroup(
-			gl_EliminarRuta.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_EliminarRuta.createSequentialGroup()
-					.addGroup(gl_EliminarRuta.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(361)
-							.addComponent(buttonEliminar, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(10)
-							.addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 532, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(10)
-							.addGroup(gl_EliminarRuta.createParallelGroup(Alignment.TRAILING)
-								.addGroup(Alignment.LEADING, gl_EliminarRuta.createSequentialGroup()
-									.addComponent(label_5)
-									.addGap(18)
-									.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE))
-								.addComponent(label_3, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
-								.addGroup(Alignment.LEADING, gl_EliminarRuta.createSequentialGroup()
-									.addGap(41)
-									.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)))
-							.addGap(48)
-							.addComponent(label_4)
-							.addGap(10)
-							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(80)
-							.addComponent(list_1, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(10, Short.MAX_VALUE))
-		);
-		gl_EliminarRuta.setVerticalGroup(
-			gl_EliminarRuta.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_EliminarRuta.createSequentialGroup()
-					.addGap(70)
-					.addGroup(gl_EliminarRuta.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label_3))
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label_4))
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(6)
-					.addGroup(gl_EliminarRuta.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label_5))
-						.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGroup(gl_EliminarRuta.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addGap(15)
-							.addComponent(buttonEliminar))
-						.addGroup(gl_EliminarRuta.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(list_1, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)))
-					.addGap(21)
-					.addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
-		);
-		EliminarRuta.setLayout(gl_EliminarRuta);
+		label_3.setBounds(10, 156, 101, 14);
+		label_5.setBounds(10, 197, 49, 14);
+		formattedTextField_1.setEditable(false);
+		formattedTextField_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		formattedTextField_1.setBounds(51, 194, 67, 20);
+		label_4.setBounds(309, 156, 89, 14);
+		EliminarRuta.setLayout(null);
+		EliminarRuta.add(textArea_1);
+		buttonEliminar.addActionListener(new ButtonEliminarActionListener());
+		buttonEliminar.setEnabled(false);
+		buttonEliminar.setBounds(370, 224, 119, 23);
+		EliminarRuta.add(buttonEliminar);
+		EliminarRuta.add(label_5);
+		EliminarRuta.add(label_3);
+		EliminarRuta.add(textField_2);
+		EliminarRuta.add(textField_3);
+		EliminarRuta.add(formattedTextField_1);
+		EliminarRuta.add(label_4);
+		comboBox_1.addItemListener(new ComboBox_1ItemListener());
+		comboBox_1.setBounds(63, 30, 518, 20);
 		
+		EliminarRuta.add(comboBox_1);
+		label_9.setBounds(10, 33, 49, 14);
+		
+		EliminarRuta.add(label_9);
+		textField_4.addActionListener(new button_buscarEliminarActionListener());
+		textField_4.setEnabled(false);
+		textField_4.setColumns(10);
+		textField_4.setBounds(191, 94, 169, 20);
+		
+		EliminarRuta.add(textField_4);
+		button_buscarEliminar.setEnabled(false);
+		button_buscarEliminar.setBounds(370, 93, 119, 23);
+		
+		EliminarRuta.add(button_buscarEliminar);
+		list_1.addListSelectionListener(new List_1ListSelectionListener());
+		list_1.setBorder(new TitledBorder(null, "Busqueda", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		list_1.setBounds(20, 68, 150, 74);
+		
+		EliminarRuta.add(list_1);
+		Panel_Control.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Panel_Control.addFocusListener(new Panel_ControlFocusListener());
+		
+		tabbedPane.addTab("Panel de Control", null, Panel_Control, null);
+		Panel_Control.setLayout(null);
+		lblUsuario.setBounds(172, 119, 78, 14);
+		
+		Panel_Control.add(lblUsuario);
+		
+		Panel_Control.add(textField_5);
+		lblContrasea.setBounds(172, 162, 78, 14);
+		
+		Panel_Control.add(lblContrasea);
+		passwordField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		passwordField.setEnabled(false);
+		passwordField.setBounds(260, 159, 86, 20);
+		
+		Panel_Control.add(passwordField);
+		btnCambiar.addActionListener(new BtnCambiarActionListener());
+		btnCambiar.setBounds(365, 158, 89, 23);
+		
+		Panel_Control.add(btnCambiar);
+		
+		Panel_Control.add(textFieldID_usu);
+		
+		//cargar_datos();
 		
 	}
+	public void cargar_datos(){
+		Dominio.Autenticar gestor_login = new Dominio.Autenticar();
+		
+		try {
+			Dominio.Empleado usuario1=gestor_login.cargar_usu(Integer.parseInt(textFieldID_usu.getText()));
+			textField_5.setText(usuario1.getNombre());
+			passwordField.setText((usuario1.getPass()));
+			
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 	private class BtnGuardar_1ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 			if(textFieldOrigen.getText().equals("") || textFieldDestino.getText().equals("") || formattedTextFieldKMS.getText().equals("")){
@@ -432,4 +493,101 @@ public class Gestion_Rutas{
 		    		}
 
 		}
+	private class ComboBox_1ItemListener implements ItemListener {
+		public void itemStateChanged(ItemEvent arg0) {
+			
+			//System.out.println(comboBox.getSelectedItem().toString());
+			int id_sel=Integer.parseInt("" + (comboBox_1.getSelectedItem().toString().charAt(4)));
+			Dominio.Gestor_Rutas gestor_r = new Dominio.Gestor_Rutas();
+			try {
+				Dominio.Ruta ruta_selec=gestor_r.cargar_ruta(id_sel);
+				buttonEliminar.setEnabled(true);
+				textField_2.setText(ruta_selec.getOrigen());
+				textField_3.setText(ruta_selec.getDestino());
+				formattedTextField_1.setText(String.valueOf(ruta_selec.getKm()));
+				textArea_1.setText(ruta_selec.getDescripcion());
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
+	private class button_buscarEliminarActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+				Dominio.Gestor_Rutas gestor_r = new Dominio.Gestor_Rutas();
+			ArrayList<Dominio.Ruta> resul_rutas = new ArrayList<Dominio.Ruta>();
+			
+			try {
+				resul_rutas.clear();
+				resul_rutas=gestor_r.visualizar_ruta(list_1.getSelectedValue().toString(), textField_4.getText());
+				
+				if(resul_rutas.isEmpty()){
+				    JOptionPane.showMessageDialog(frame,"No se han encontrado coincidencias", "Ruta no encontrada", JOptionPane.ERROR_MESSAGE);
+				}
+				else{
+					for (int i=0;i<resul_rutas.size();i++){
+					comboBox_1.addItem(resul_rutas.get(i).toString1());
+					if(i==0){ //REINICIAR COMBOBOX
+						while (comboBox_1.getItemCount()!=1)
+							comboBox_1.removeItemAt(i);
+					}
+					}
+			}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	private class List_1ListSelectionListener implements ListSelectionListener {
+		public void valueChanged(ListSelectionEvent arg0) {
+			textField_4.setEnabled(true);
+			button_buscarEliminar.setEnabled(true);
+		}
+	}
+	private class ButtonEliminarActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+		    int opcion = JOptionPane.showOptionDialog(null, "¿Estás seguro de que quieres borrar esta ruta?", "Eliminación Ruta", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);	
+		    if(opcion==0){ //SI
+			Dominio.Gestor_Rutas gestor_r = new Dominio.Gestor_Rutas();
+	    	int id_sel=Integer.parseInt("" + (comboBox_1.getSelectedItem().toString().charAt(4)));
+	    	try {
+				gestor_r.eliminar_ruta(id_sel);
+			    JOptionPane.showMessageDialog(frame,"RUTA ELIMINADA DE LA BASE DE DATOS CORRECTAMENTE", "Ruta eliminada", JOptionPane.INFORMATION_MESSAGE);
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+			    JOptionPane.showMessageDialog(frame,"Ocurrió un error al borrar la ruta en la Base de Datos", "Error al Elimnar", JOptionPane.ERROR_MESSAGE);
+				e.printStackTrace();
+			}
+		    }
+
+		}
+	}
+	private class ThisWindowListener extends WindowAdapter {
+		@Override
+		public void windowClosing(WindowEvent arg0) {
+            JOptionPane.showMessageDialog(frame,"Gracias por utilizar nuestro software. Hasta la proxima", "Salir", JOptionPane.CLOSED_OPTION);
+            System.exit(0);
+		}
+	}
+	private class Panel_ControlFocusListener extends FocusAdapter {
+		@Override
+		public void focusGained(FocusEvent arg0) {
+			cargar_datos();
+		}
+	}
+	private class BtnCambiarActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			prue dialog = new prue();
+			dialog.setVisible(true);
+			dialog.textFieldID_usu.setText(textFieldID_usu.getText());
+			dialog.passwordFieldcorrecta.setText(new String (passwordField.getPassword()));
+			
+		}
+	}
+	}
+

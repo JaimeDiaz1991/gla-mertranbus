@@ -60,5 +60,9 @@ public class Ruta {
 				+ destino + " Descripcion: " + descripcion 
 				+ " kilometros: " + km + ".";
 	}
+	public String toString1() {
+		return "ID: "+ ID +" Origen: " + origen + " Destino: " 
+				+ destino + " kilometros: " + km + ".";
+	}
 	
 }
