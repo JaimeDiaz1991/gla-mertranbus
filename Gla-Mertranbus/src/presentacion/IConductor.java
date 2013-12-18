@@ -34,6 +34,7 @@ import java.awt.Font;
 
 public class IConductor extends JFrame {
 
+	//Declaracion variables
 	private JPanel contentPane;
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
