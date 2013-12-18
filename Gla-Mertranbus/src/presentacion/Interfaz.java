@@ -38,6 +38,7 @@ public class Interfaz {
 
 	public static boolean insertarPedido(ArrayList<JTextField> informacionOrigen, ArrayList<JTextField> informacionDestino, JComboBox TipoPaquete) {
 		
+		//ARRAY
 		ArrayList<String> informacion = new ArrayList<String>();
 		for(int i=0;i<informacionOrigen.size();i++){
 			informacion.add(informacionOrigen.get(i).getText());
