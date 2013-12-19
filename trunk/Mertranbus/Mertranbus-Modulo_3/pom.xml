@@ -38,5 +38,10 @@
            </configuration>
        </plugin>
     </plugins>
+    <resources>
+  		<resource>
+        	<directory>recursos</directory>
+      	</resource>
+    </resources>
   </build>
 </project>
