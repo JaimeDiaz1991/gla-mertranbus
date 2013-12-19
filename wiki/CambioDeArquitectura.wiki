@@ -51,13 +51,11 @@ Esta fase se corresponde a la entrega del producto al cliente, con sus manuales,
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8MEZTa0FwVENjRmc/edit?usp=drive_web" rel="nofollow">Plan de configuracion</a>
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8NFpFOHdHaWRBa0U/edit?usp=drive_web" rel="nofollow">Plan de testing</a>
-_
 
-Tutorial SVN
-_
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8cnFQWlJjcjhPa28/edit?usp=drive_web" rel="nofollow">Tutorial SVN</a>
 
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eVpROGNYMTZjaWc/edit?usp=drive_web" rel="nofollow">Manual usuario</a>
 Manual usuario
-_
+
 
 Plan de mantenimiento
-_
