@@ -2,10 +2,16 @@
 
 En este punto se le da un nuevo enfoque al desarrollo del proyecto a partir de una arquitectura monolítica con base de datos alojada en un servidor hosting remoto.
 
-Fase de Inicio
-_lo mismo que en el otro
+===1. Fase de Inicio===
 
-Fase de Elaboración
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eFh2dVBOaXBMSHM/edit?usp=drive_web" rel="nofollow">Descripción del Sistema</a>
+
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8X2Y1YjhTV0dUVVE/edit?usp=drive_web" rel="nofollow">Especificación de Requisitos</a>
+
+
+===2. Fase de Elaboración===
 _Planificacion WORD
 _Planificacion EXCELL
 _Diagrama de casos de uso
