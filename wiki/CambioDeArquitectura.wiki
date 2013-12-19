@@ -56,5 +56,4 @@ Esta fase se corresponde a la entrega del producto al cliente, con sus manuales,
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eVpROGNYMTZjaWc/edit?usp=drive_web" rel="nofollow">Manual usuario</a>
 
-
-Plan de mantenimiento
+* <a href="https://docs.google.com/file/d/0B34gviLETh3DeUxBSVdxU3NRVVU" rel="nofollow">Plan de mantenimiento</a>
