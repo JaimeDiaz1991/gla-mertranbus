@@ -12,23 +12,45 @@ En este punto se le da un nuevo enfoque al desarrollo del proyecto a partir de u
 
 
 ===2. Fase de Elaboración===
-_Planificacion WORD
-_Planificacion EXCELL
-_Diagrama de casos de uso
-_De clases de analisis
-_De diseño
 
-Construccion
-_lo mismo
-_diseño BBDD
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eGRhZm0wQzI1Z1U/edit?usp=drive_web" rel="nofollow">Planificación</a>
 
-Fase transición
-_lo mismo
 
-Plan de configuracion
-_
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8c2JIYmxrQmk1dVk/edit?usp=drive_web" rel="nofollow">Tabla de Planificación y Presupuesto</a>
 
-Plan de testing
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8RUREcW5TX1Jjbmc/edit?usp=drive_web" rel="nofollow">Diagramas de Casos de uso</a>
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8LU41UkpFemV0OEk/edit?usp=drive_web" rel="nofollow">Diagrama de Clases de Análisis</a>
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8ZVIzSElaUzRmYTA/edit?usp=drive_web" rel="nofollow">Diagrama de Clases de Diseño</a>
+
+===** 3. Fase de Construcción  ===
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8bG9oOWFpTUlSWlk/edit?usp=drive_web" rel="nofollow">Caso de Uso Autenticar</a>
+
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8emJjU2FfU0Q5WG8/edit?usp=drive_web" rel="nofollow">Caso de Uso Gestion Pedidos</a>
+
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8TlI0RnFTaGNhbTQ/edit?usp=drive_web" rel="nofollow">Caso de Uso Gestion Rutas</a>
+
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8TjU0YkJ6eTNmeTA/edit?usp=drive_web" rel="nofollow">Caso de Uso Sistema de Información</a>
+
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8Z2NocGhZMWxQWkU/edit?usp=drive_web" rel="nofollow">Caso de Uso Visualizar Pedido</a>
+
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8UlN1NnpIY19qTmc/edit?usp=drive_web" rel="nofollow">Caso de Uso Visualizar Rutas</a>
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8RUdacjdXUXdmSTA/edit?usp=drive_web" rel="nofollow">Diseño de la base de datos</a>
+
+===** 4. Fase de Transición  ===
+
+Esta fase se corresponde a la entrega del producto al cliente, con sus manuales,ayuda y su posterior mejora.
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8MEZTa0FwVENjRmc/edit?usp=drive_web" rel="nofollow">Plan de configuracion</a>
+
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8NFpFOHdHaWRBa0U/edit?usp=drive_web" rel="nofollow">Plan de testing</a>
 _
 
 Tutorial SVN
@@ -39,11 +61,3 @@ _
 
 Plan de mantenimiento
 _
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
