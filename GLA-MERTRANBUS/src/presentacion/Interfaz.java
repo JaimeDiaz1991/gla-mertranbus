@@ -76,8 +76,21 @@ public class Interfaz {
 		
 	}
 
+	public static ArrayList obtenerusuarios() {
+		GestorPedidos.obtenerPedido(Autenticar.getUsuarios());
+		ArrayList Id = new ArrayList();
+		for(int j=0;j<GestorPedidos.getPedidoscreados().size();j++){
+			Id.add(GestorPedidos.getPedidoscreados().get(j).getiD());
+		}
+		
+		return Id;
+	}
 
-
+	public static ArrayList obtenerelementos(String IDpedido) {
+		return GestorPedidos.obtenerelementos(Integer.parseInt(IDpedido));
+		
+		
+	}
 
 	public static int obtenertipodepaquete(String IDpedido) {
 		return GestorPedidos.obtenertipopaquete(Integer.parseInt(IDpedido));
@@ -115,3 +128,4 @@ public class Interfaz {
 	
 
 }
+

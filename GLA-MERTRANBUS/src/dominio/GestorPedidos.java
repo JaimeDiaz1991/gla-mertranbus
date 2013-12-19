@@ -15,9 +15,34 @@ public class GestorPedidos {
 		return Agente.insertarPedidos(p);
 	}
 
-	
+	public static void obtenerPedido(Cliente usuarios) {
+		ArrayList<String[]> pedidos=Agente.obtenerPedido(usuarios.getiD());
+		pedidoscreados=new ArrayList<Pedido>();
+		for(int i=0;i<pedidos.size();i++){
+			Pedido p=new Pedido(Integer.parseInt(pedidos.get(i)[0]),pedidos.get(i)[1],pedidos.get(i)[3],Integer.parseInt(pedidos.get(i)[5]),pedidos.get(i)[7],//ORGIEN
+					pedidos.get(i)[2],pedidos.get(i)[4],Integer.parseInt(pedidos.get(i)[6]),pedidos.get(i)[8],//DESTINO
+					pedidos.get(i)[9],Integer.parseInt(pedidos.get(i)[10]));
+			pedidoscreados.add(p);
+		}
+	}
 
-	
+	public static ArrayList obtenerelementos(int iDpedido) {
+		ArrayList elementos=new ArrayList();
+
+		for(int i=0;i<pedidoscreados.size();i++){
+			if(pedidoscreados.get(i).getiD()==iDpedido){
+				elementos.add(pedidoscreados.get(i).getPoblacionOrigen());
+				elementos.add(pedidoscreados.get(i).getCalleOrigen());
+				elementos.add(pedidoscreados.get(i).getNumeroOrigen());
+				elementos.add(pedidoscreados.get(i).getEscaleraOrigen());
+				elementos.add(pedidoscreados.get(i).getPoblacionDestino());
+				elementos.add(pedidoscreados.get(i).getCalleDestino());
+				elementos.add(pedidoscreados.get(i).getNumeroDestino());
+				elementos.add(pedidoscreados.get(i).getEscaleraDestino());
+			}
+		}
+		return elementos;
+	}
 
 	public static ArrayList<Pedido> getPedidoscreados() {
 		return pedidoscreados;

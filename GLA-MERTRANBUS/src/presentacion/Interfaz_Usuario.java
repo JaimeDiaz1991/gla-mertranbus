@@ -187,7 +187,7 @@ public class Interfaz_Usuario {
 			Inicio.add(btnModificarUsuario);
 			btnModificarUsuario.setIcon(new ImageIcon(Interfaz_Usuario.class.getResource("/Imagenes/modificar-nuevo.png")));
 			btnModificarUsuario.addActionListener(new BtnPanelModificarusuario());
-		
+		btnRealizarPedido.addActionListener(new BtnPanelAutenticarActionListener());
 		
 		JPanel Autenticar = new JPanel();
 		pnlContenido.add(Autenticar, "Autenticar");
@@ -458,8 +458,140 @@ public class Interfaz_Usuario {
 		btnCancelarnuevo.setBounds(413, 219, 125, 41);
 		Registro.add(btnCancelarnuevo);
 		
+		JPanel SeguirPedido = new JPanel();
+		pnlContenido.add(SeguirPedido, "Seguir Pedio");
+		SeguirPedido.setLayout(null);
+		SeguirPedido.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Seguir Pedido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		//
+		JLabel label = new JLabel("Num.Pedido:");
+		label.setBounds(10, 30, 73, 14);
+		SeguirPedido.add(label);
+		
+		JLabel label_6 = new JLabel("Origen: ");
+		label_6.setBounds(125, 85, 46, 14);
+		SeguirPedido.add(label_6);
+		
+		JLabel label_7 = new JLabel("Destino: ");
+		label_7.setBounds(125, 138, 46, 14);
+		SeguirPedido.add(label_7);
+		
+		JLabel label_8 = new JLabel("Tipo: ");
+		label_8.setBounds(125, 190, 46, 14);
+		SeguirPedido.add(label_8);
+		
+		visualizar=new ArrayList<JTextField>();
+		informacionOrigenVisualizar=new ArrayList<JTextField>();
+		POrigen = new JTextField();
+		POrigen.setColumns(10);
+		POrigen.setBounds(181, 82, 86, 20);
+		informacionOrigenVisualizar.add(POrigen);
+		visualizar.add(POrigen);
+		SeguirPedido.add(POrigen);
+		
+		COrigen = new JTextField();
+		COrigen.setColumns(10);
+		COrigen.setBounds(285, 82, 86, 20);
+		visualizar.add(COrigen);
+		informacionOrigenVisualizar.add(COrigen);
+		SeguirPedido.add(COrigen);
+		
+		NOrigen = new JTextField();
+		NOrigen.setColumns(10);
+		visualizar.add(NOrigen);
+		NOrigen.setBounds(381, 82, 33, 20);
+		informacionOrigenVisualizar.add(NOrigen);
+		SeguirPedido.add(NOrigen);
+		
+		EOrigen = new JTextField();
+		EOrigen.setColumns(10);
+		EOrigen.setBounds(424, 82, 86, 20);
+		visualizar.add(EOrigen);
+		informacionOrigenVisualizar.add(EOrigen);
+		SeguirPedido.add(EOrigen);
+		
+		informacionDestinoVisualizar=new ArrayList<JTextField>();
+		PDestino = new JTextField();
+		PDestino.setColumns(10);
+		PDestino.setBounds(181, 135, 86, 20);
+		visualizar.add(PDestino);
+		informacionDestinoVisualizar.add(PDestino);
+		SeguirPedido.add(PDestino);
+		
+		CDestino = new JTextField();
+		CDestino.setColumns(10);
+		CDestino.setBounds(285, 135, 86, 20);
+		visualizar.add(CDestino);
+		informacionDestinoVisualizar.add(CDestino);
+		SeguirPedido.add(CDestino);
+		
+		NDestino = new JTextField();
+		NDestino.setColumns(10);
+		NDestino.setBounds(381, 135, 33, 20);
+		visualizar.add(NDestino);
+		informacionDestinoVisualizar.add(NDestino);
+		SeguirPedido.add(NDestino);
+		
+		EDestino = new JTextField();
+		EDestino.setColumns(10);
+		EDestino.setBounds(424, 135, 86, 20);
+		visualizar.add(EDestino);
+		informacionDestinoVisualizar.add(EDestino);
+		SeguirPedido.add(EDestino);
+		
+		JLabel label_9 = new JLabel("Poblacion");
+		label_9.setBounds(198, 110, 46, 14);
+		SeguirPedido.add(label_9);
+		
+		JLabel label_10 = new JLabel("Calle");
+		label_10.setBounds(295, 110, 46, 14);
+		SeguirPedido.add(label_10);
+		
+		JLabel label_11 = new JLabel("Numero");
+		label_11.setBounds(378, 110, 46, 14);
+		SeguirPedido.add(label_11);
+		
+		JLabel label_12 = new JLabel("Piso/Escalera");
+		label_12.setBounds(434, 110, 76, 14);
+		SeguirPedido.add(label_12);
+		
+		JButton btnModificar = new JButton("Modificar");
+		btnModificar.addActionListener(new BtnModificar());
+		
+		btnModificar.setBounds(176, 281, 108, 35);
+		SeguirPedido.add(btnModificar);
+		
+		JButton btnCancelar_1 = new JButton("Cancelar");
+		btnCancelar_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CardLayout cl = (CardLayout)(pnlContenido.getLayout());
+				cl.show(pnlContenido, "Inicio");
+			}
+		});
+		btnCancelar_1.setBounds(344, 281, 118, 35);
+		SeguirPedido.add(btnCancelar_1);
+		
+		TipodePaquetedestino = new JComboBox();
+		TipodePaquetedestino.setModel(new DefaultComboBoxModel(new String[] {"PAQUETE", "SOBRE"}));
+		TipodePaquetedestino.setBounds(198, 187, 86, 20);
+		SeguirPedido.add(TipodePaquetedestino);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setViewportBorder(new TitledBorder(null, "Elige tu Pedido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		scrollPane.setBounds(313, 166, 197, 68);
+		SeguirPedido.add(scrollPane);
+		
+		List = new JList();
+		List.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent arg0) {
+				elementoseleccionado();
+			}
+
+		});
+		//List.addMouseMotionListener(new Seleccion());
+		DefaultListModel modeloLista = new DefaultListModel();
+		List.setModel(modeloLista);
+		scrollPane.setViewportView(List);
+		
 		JPanel Modificar_Usuario = new JPanel();
 		Modificar_Usuario.setBorder(new TitledBorder(null, "Cambiar Usuario", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlContenido.add(Modificar_Usuario, "Modificar Usuario");
@@ -507,7 +639,17 @@ public class Interfaz_Usuario {
 	
 	
 	
-	
+	private class BtnPanelAutenticarActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+			login.setText(null);
+			passwordField.setText(null);
+			seleccion=1;
+			CardLayout cl = (CardLayout)(pnlContenido.getLayout());
+			cl.show(pnlContenido, "Autenticar");
+		}
+
+		
+	}
 	
 	private class BtnPanelModificarusuario implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
@@ -564,8 +706,17 @@ public class Interfaz_Usuario {
 								tipo_paquete.setSelectedIndex(-1);
 								cl.show(pnlContenido, "Realizar Pedido");
 							break;
-							
 							case 2:
+								
+								for(int i=0;i<informacionOrigen.size();i++){
+									informacionOrigenVisualizar.get(i).setText(null);
+									informacionDestinoVisualizar.get(i).setText(null);
+								}
+								TipodePaquetedestino.setSelectedIndex(-1);
+								introducirelementos();
+								cl.show(pnlContenido, "Seguir Pedio");
+							break;
+							case 3:
 								textloginnuevo.setText(login.getText());
 								textpasswordnuevo.setText(passwordField.getText());
 								cl.show(pnlContenido, "Modificar Usuario");
@@ -581,7 +732,21 @@ public class Interfaz_Usuario {
 			}
 			}
 
-	
+		private void introducirelementos() {
+			DefaultListModel modeloLista= (DefaultListModel) List.getModel();
+			modeloLista.removeAllElements();
+			ArrayList elementos=Interfaz.obtenerusuarios();
+			for(int i=0;i<elementos.size();i++){
+				modeloLista.addElement(elementos.get(i));
+				int indice = modeloLista.getSize();
+				List.setSelectedIndex(indice);
+				List.ensureIndexIsVisible(indice);
+			}
+			
+			
+
+			
+		}
 			
 		}
 		
@@ -630,7 +795,29 @@ public class Interfaz_Usuario {
 		
 	}
 	
-	
+	private class BtnModificar implements ActionListener{
+		public void actionPerformed(ActionEvent arg0) {
+			if(Interfaz.comprobarPedido(informacionOrigenVisualizar,informacionDestinoVisualizar)==true ){
+				int id=Integer.parseInt(List.getSelectedValue().toString());
+			
+				if(Interfaz.actualizarPedido(informacionOrigenVisualizar,informacionDestinoVisualizar,TipodePaquetedestino,id)){
+					JOptionPane.showMessageDialog(frame, "Pedido Obtenido", "Pedido", JOptionPane.PLAIN_MESSAGE);
+					CardLayout cl = (CardLayout)(pnlContenido.getLayout());
+					cl.show(pnlContenido, "Inicio");
+				}
+				else{
+					JOptionPane.showMessageDialog(frame, "Datos incorrectos", "ERROR DATOS", JOptionPane.PLAIN_MESSAGE);	
+
+				}
+			}
+			
+			else{
+				JOptionPane.showMessageDialog(frame, "Datos incorrectos", "ERROR DATOS", JOptionPane.PLAIN_MESSAGE);	
+				}
+		}
+
+			
+	}
 		
 	private class BtnModificarusuario implements ActionListener{
 		public void actionPerformed(ActionEvent arg0) {
@@ -657,7 +844,16 @@ public class Interfaz_Usuario {
 		}
 	}
 	
-	
+	private void elementoseleccionado() {
+		String Id=List.getSelectedValue().toString();
+		ArrayList elementos=Interfaz.obtenerelementos(Id);
+		for(int i=0;i<elementos.size();i++){
+			visualizar.get(i).setText(elementos.get(i).toString());
+		}
+		
+		TipodePaquetedestino.setSelectedIndex(Interfaz.obtenertipodepaquete(Id));
+		
+	}
 	
 	
 
@@ -667,3 +863,4 @@ public class Interfaz_Usuario {
 	
 
 }
+
