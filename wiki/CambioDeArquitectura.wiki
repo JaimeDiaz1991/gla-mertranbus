@@ -1,0 +1,43 @@
+= Cambio de arquitectura =
+
+En este punto se le da un nuevo enfoque al desarrollo del proyecto a partir de una arquitectura monolítica con base de datos alojada en un servidor hosting remoto.
+
+Fase de Inicio
+_lo mismo que en el otro
+
+Fase de Elaboración
+_Planificacion WORD
+_Planificacion EXCELL
+_Diagrama de casos de uso
+_De clases de analisis
+_De diseño
+
+Construccion
+_lo mismo
+_diseño BBDD
+
+Fase transición
+_lo mismo
+
+Plan de configuracion
+_
+
+Plan de testing
+_
+
+Tutorial SVN
+_
+
+Manual usuario
+_
+
+Plan de mantenimiento
+_
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
