@@ -16,11 +16,12 @@ En este punto se le da un nuevo enfoque al desarrollo del proyecto a partir de u
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8eGRhZm0wQzI1Z1U/edit?usp=drive_web" rel="nofollow">Planificación</a>
 
 
-* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8c2JIYmxrQmk1dVk/edit?usp=drive_web" rel="nofollow">Tabla de Planificación y Presupuesto</a>
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8VEdWNzdjU3hlN2M/edit?usp=drive_web" rel="nofollow">Tabla de Planificación y Presupuesto</a>
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8RUREcW5TX1Jjbmc/edit?usp=drive_web" rel="nofollow">Diagramas de Casos de uso</a>
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8LU41UkpFemV0OEk/edit?usp=drive_web" rel="nofollow">Diagrama de Clases de Análisis</a>
+
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8ZVIzSElaUzRmYTA/edit?usp=drive_web" rel="nofollow">Diagrama de Clases de Diseño</a>
 
 ===** 3. Fase de Construcción  ===
@@ -48,7 +49,7 @@ En este punto se le da un nuevo enfoque al desarrollo del proyecto a partir de u
 
 Esta fase se corresponde a la entrega del producto al cliente, con sus manuales,ayuda y su posterior mejora.
 
-* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8MEZTa0FwVENjRmc/edit?usp=drive_web" rel="nofollow">Plan de configuracion</a>
+* <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8VGJtelZ3QThmY3c/edit?usp=drive_web" rel="nofollow">Plan de configuracion</a>
 
 * <a href="https://docs.google.com/file/d/0B7VsjUy5ozp8NFpFOHdHaWRBa0U/edit?usp=drive_web" rel="nofollow">Plan de testing</a>
 
