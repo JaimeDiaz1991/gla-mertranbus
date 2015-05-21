@@ -1,0 +1,1 @@
+<a href='https://www.google.com/calendar/embed?src=2vr7p8nf3gjfcc6ss1olb5rqm0%40group.calendar.google.com&ctz=Europe/Madrid '> CALENDARIO SOFTWARE DESIGN STRIKERS </a>
